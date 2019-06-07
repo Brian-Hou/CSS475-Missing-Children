@@ -1,8 +1,9 @@
 <?php
-
 /**
  * Created by PhpStorm.
- * User:
+ * User: Melroy, Kevin, Sepehr, Brian
+ * Date: 06/07/19
+ * Time: 10:40am
  */
 $servername = 'vergil.u.washington.edu'; // Your Server (if noot)
 $username = 'Student';

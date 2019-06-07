@@ -1,10 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: markk@uw.edu
- * Date: 7/24/2018
- * Time: 2:45 PM
-*/?>
+ * User: Melroy, Kevin, Sepehr, Brian
+ * Date: 06/07/19
+ * Time: 10:40am
+ */
+?>
 <html lang = "en">
 <head>
     <title>Sample PHP Database Program</title>

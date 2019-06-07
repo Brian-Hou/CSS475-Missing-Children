@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User:
- * Date: 7/24/2018
- * Time: 3:07 PM
+ * User: Melroy, Kevin, Sepehr, Brian
+ * Date: 06/07/19
+ * Time: 10:40am
  */
 require_once 'config.inc.php';
 
@@ -29,7 +29,7 @@ require_once 'header.inc.php';
     }
 
     // Prepare SQL Statement
-    $sql = "SELECT missingPersonID, firstName,lastName FROM MissingPerson";
+    $sql = "SELECT missingPersonID, firstName,lastName FROM MissingPerson ORDER BY firstName, lastName";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
@@ -42,11 +42,16 @@ require_once 'header.inc.php';
         $stmt->bind_result($missingPersonID,$firstName,$lastName);
         echo "<ul>";
         while ($stmt->fetch()) {
-            echo '<li><a href="show_customer.php?id='  . $missingPersonID . '">' . $firstName . ' ' . $lastName . '</a></li>';
+            echo '<li><a href="show_missing_person.php?id='  . $missingPersonID . '">' . $firstName . ' ' . $lastName . '</a></li>';
         }
         echo "</ul>";
     }
-
+    ?>
+    <form action="search_missing_children.php" method = "get">
+    Filter By First Name: <input type = "text" name="fname"><br>
+    <input type="submit">
+    </form>
+    <?php
     // Close Connection
     $conn->close();
 
